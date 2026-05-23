@@ -19,6 +19,16 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
+      - name: Decode Keystore File
+        run: |
+          if [ -f "debug.keystore.base64" ]; then
+            base64 -d debug.keystore.base64 > debug.keystore
+            echo "Keystore decoded successfully in root dir"
+          elif [ -f "app/debug.keystore.base64" ]; then
+            base64 -d app/debug.keystore.base64 > app/debug.keystore
+            echo "Keystore decoded successfully in app dir"
+          fi
+
       - name: Make Gradle Executable
         run: |
           if [ -f "./gradlew" ]; then
