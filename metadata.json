@@ -1,0 +1,6 @@
+{
+  "name": "Masum SMS Bomber",
+  "description": "An interactive API stress testing and rate-limiting visualizer to audit OTP verification security.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
